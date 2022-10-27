@@ -36,6 +36,7 @@ public class Program {
         panel.add(tommaRutan);
 
         buttons.get(11).addActionListener(e -> {
+            //buggar kvar, måste fixa så den inte hoppar alltid åt vänster även om det är ett block där
             int originalX = buttons.get(11).getX();
             int originalY = buttons.get(11).getY();
             int tommaRutanX = tommaRutan.getX();
