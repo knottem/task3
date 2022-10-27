@@ -12,9 +12,10 @@ public class Program {
     Font defaultFont = new Font("Arial Black", Font.PLAIN, 20);
 
     void program(){
+
         for (int i = 0; i < 15; i++) {
             buttons.add(new JButton());
-            buttons.get(i).setText(String.valueOf(i));
+            buttons.get(i).setText(String.valueOf(i+1));
             panel.add(buttons.get(i));
         }
 
