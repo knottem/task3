@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Program {
 
@@ -8,33 +9,40 @@ public class Program {
     JPanel panel = new JPanel();
     ArrayList<JButton> buttons = new ArrayList<>();
     int tileSize = 100;
-    JButton tommaRutan = new JButton();
+    JButton tommaRutan = new JButton("test");
 
     int width = 0;
     int height = 0;
 
     Font defaultFont = new Font("Arial Black", Font.PLAIN, 20);
 
+
     void program(){
 
-        for (int i = 0; i < 15; i++) {
+
+       for (int i = 0; i < 15; i++) {
             buttons.add(new JButton());
             buttons.get(i).setText(String.valueOf(i+1));
-            buttons.get(i).setSize(width,height);
             buttons.get(i).setFont(defaultFont);
-            panel.add(buttons.get(i));
+            panel.add(buttons.get(i),i);
         }
-        tommaRutan.setVisible(false);
-        panel.add(tommaRutan);
 
-        for (JButton button : buttons) {
+        tommaRutan.setVisible(false);
+        panel.add(tommaRutan, 15);
+
+
+       for (JButton button : buttons) {
             button.addActionListener(e -> {
-                panel.remove(button);
-                panel.add(button);
-                frame.validate();
-                frame.repaint();
+                if(Objects.equals(button.getText(), "13") || Objects.equals(button.getText(), "14")) {
+                    panel.remove(button);
+                    panel.add(button);
+                    frame.validate();
+                    frame.repaint();
+                }
             });
         }
+
+
 
 
         panel.setLayout(new GridLayout(4,4));
