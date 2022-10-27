@@ -31,14 +31,25 @@ public class Program {
                 width = 0;
             }
         }
-        tommaRutan.setVisible(true);
+        tommaRutan.setVisible(false);
         tommaRutan.setBounds(tileSize*3,tileSize*3,tileSize,tileSize);
         panel.add(tommaRutan);
 
+        buttons.get(14).addActionListener(e -> {
+            int originalX = buttons.get(14).getX();
+            int originalY = buttons.get(14).getY();
+            int tommaRutanX = tommaRutan.getX();
+            int tommaRutanY = tommaRutan.getY();
+            if(originalX - tommaRutanX == tileSize || originalX + tommaRutanX == tileSize || tommaRutanX - originalX == tileSize){
+                buttons.get(14).setBounds(tommaRutanX,originalY,tileSize,tileSize);
+                tommaRutan.setBounds(originalX,tommaRutanY,tileSize,tileSize);
+            }
+        });
 
 
 
-      for (JButton button : buttons) {
+
+      /*for (JButton button : buttons) {
             button.addActionListener(e -> {
                     panel.remove(button);
                     panel.add(button);
@@ -46,6 +57,8 @@ public class Program {
                     frame.repaint();
             });
         }
+
+       */
 
 
 
