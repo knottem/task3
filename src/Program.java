@@ -40,32 +40,29 @@ public class Program {
             int originalY = buttons.get(11).getY();
             int tommaRutanX = tommaRutan.getX();
             int tommaRutanY = tommaRutan.getY();
-            if(originalX - tommaRutanX == tileSize || originalX + tommaRutanX == tileSize || tommaRutanX - originalX == tileSize){
+            if(originalX - tommaRutanX == tileSize || originalX + tommaRutanX == tileSize || tommaRutanX - originalX == tileSize && tommaRutanY == originalY){
                 buttons.get(11).setBounds(tommaRutanX,originalY,tileSize,tileSize);
                 tommaRutan.setBounds(originalX,tommaRutanY,tileSize,tileSize);
             }
-            else if(originalY - tommaRutanY == tileSize || originalY + tommaRutanY == tileSize || tommaRutanY - originalY == tileSize){
+            else if(originalY - tommaRutanY == tileSize || originalY + tommaRutanY == tileSize || tommaRutanY - originalY == tileSize && tommaRutanX == originalX){
                 buttons.get(11).setBounds(originalX,tommaRutanY,tileSize,tileSize);
                 tommaRutan.setBounds(tommaRutanX,originalY,tileSize,tileSize);
             }
         });
-
-
-
-
-      /*for (JButton button : buttons) {
-            button.addActionListener(e -> {
-                    panel.remove(button);
-                    panel.add(button);
-                    frame.validate();
-                    frame.repaint();
-            });
-        }
-
-       */
-
-
-
+        buttons.get(10).addActionListener(e -> {
+                 int originalX = buttons.get(10).getX();
+                 int originalY = buttons.get(10).getY();
+                 int tommaRutanX = tommaRutan.getX();
+                 int tommaRutanY = tommaRutan.getY();
+                 if(originalX - tommaRutanX == tileSize || originalX + tommaRutanX == tileSize || tommaRutanX - originalX == tileSize && tommaRutanY == originalY){
+                     buttons.get(10).setBounds(tommaRutanX,originalY,tileSize,tileSize);
+                     tommaRutan.setBounds(originalX,tommaRutanY,tileSize,tileSize);
+                 }
+                 else if(originalY - tommaRutanY == tileSize || originalY + tommaRutanY == tileSize || tommaRutanY - originalY == tileSize && tommaRutanX == originalX){
+                     buttons.get(10).setBounds(originalX,tommaRutanY,tileSize,tileSize);
+                     tommaRutan.setBounds(tommaRutanX,originalY,tileSize,tileSize);
+                 }
+             });
 
         panel.setLayout(null);
 
