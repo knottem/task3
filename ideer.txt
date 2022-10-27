@@ -1,4 +1,4 @@
-1. lägg till en till knapp men ha den notvisible
+1. lägg till en ytterligare knapp men ha den notVisible
 
 2. se om det går att kanske enkelt validate repaint efter att ha flyttat den tomma knappen med den man tryckte på.
 
