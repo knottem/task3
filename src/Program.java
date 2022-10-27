@@ -24,19 +24,18 @@ public class Program {
             buttons.get(i).setFont(defaultFont);
             panel.add(buttons.get(i));
         }
-        buttons.get(14).addActionListener(e -> {
-            panel.remove(14);
-            panel.add(buttons.get(14));
-            frame.validate();
-            frame.repaint();
-        });
         tommaRutan.setVisible(false);
         panel.add(tommaRutan);
 
+        buttons.get(14).addActionListener(e -> {
+                panel.remove(14);
+                panel.add(buttons.get(14));
+                frame.validate();
+                frame.repaint();
+            });
+
+
         panel.setLayout(new GridLayout(4,4));
-
-
-
 
         frame.add(panel);
 
