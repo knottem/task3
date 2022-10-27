@@ -19,39 +19,44 @@ public class Program {
 
     void program(){
 
-
-       for (int i = 0; i < 15; i++) {
+        for (int i = 0; i < 15; i++) {
             buttons.add(new JButton());
+            buttons.get(i).setBounds(width,height,tileSize,tileSize);
             buttons.get(i).setText(String.valueOf(i+1));
             buttons.get(i).setFont(defaultFont);
             panel.add(buttons.get(i),i);
+            width = width + tileSize;
+            if(i == 3 || i == 7 || i == 11){
+                height = height + tileSize;
+                width = 0;
+            }
         }
+        tommaRutan.setVisible(true);
+        tommaRutan.setBounds(tileSize*3,tileSize*3,tileSize,tileSize);
+        panel.add(tommaRutan);
 
-        tommaRutan.setVisible(false);
-        panel.add(tommaRutan, 15);
 
 
-       for (JButton button : buttons) {
+
+      for (JButton button : buttons) {
             button.addActionListener(e -> {
-                if(Objects.equals(button.getText(), "13") || Objects.equals(button.getText(), "14")) {
                     panel.remove(button);
                     panel.add(button);
                     frame.validate();
                     frame.repaint();
-                }
             });
         }
 
 
 
 
-        panel.setLayout(new GridLayout(4,4));
+        panel.setLayout(null);
 
         frame.add(panel);
 
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(tileSize*4, tileSize*4);
+        frame.setSize(tileSize*4 + 15, tileSize*4 + 35);
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
 
