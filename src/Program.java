@@ -1,7 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class Program {
 
@@ -9,7 +8,8 @@ public class Program {
     JPanel panel = new JPanel();
     ArrayList<JButton> buttons = new ArrayList<>();
     int tileSize = 100;
-    JButton tommaRutan = new JButton("test");
+
+    JButton tommaRutan = new JButton();
 
     int width = 0;
     int height = 0;
@@ -36,16 +36,15 @@ public class Program {
         panel.add(tommaRutan);
 
         buttons.get(11).addActionListener(e -> {
-            //buggar kvar, måste fixa så den inte hoppar alltid åt vänster även om det är ett block där
             int originalX = buttons.get(11).getX();
             int originalY = buttons.get(11).getY();
             int tommaRutanX = tommaRutan.getX();
             int tommaRutanY = tommaRutan.getY();
-            if(originalX - tommaRutanX == tileSize || originalX + tommaRutanX == tileSize || tommaRutanX - originalX == tileSize && tommaRutanY == originalY){
+            if((originalX - tommaRutanX == tileSize || originalX + tommaRutanX == tileSize || tommaRutanX - originalX == tileSize) && tommaRutanY == originalY){
                 buttons.get(11).setBounds(tommaRutanX,originalY,tileSize,tileSize);
                 tommaRutan.setBounds(originalX,tommaRutanY,tileSize,tileSize);
             }
-            else if(originalY - tommaRutanY == tileSize || originalY + tommaRutanY == tileSize || tommaRutanY - originalY == tileSize && tommaRutanX == originalX){
+            else if((originalY - tommaRutanY == tileSize || originalY + tommaRutanY == tileSize || tommaRutanY - originalY == tileSize) && tommaRutanX == originalX){
                 buttons.get(11).setBounds(originalX,tommaRutanY,tileSize,tileSize);
                 tommaRutan.setBounds(tommaRutanX,originalY,tileSize,tileSize);
             }
@@ -55,11 +54,11 @@ public class Program {
                  int originalY = buttons.get(10).getY();
                  int tommaRutanX = tommaRutan.getX();
                  int tommaRutanY = tommaRutan.getY();
-                 if(originalX - tommaRutanX == tileSize || originalX + tommaRutanX == tileSize || tommaRutanX - originalX == tileSize && tommaRutanY == originalY){
+                 if((originalX - tommaRutanX == tileSize || originalX + tommaRutanX == tileSize || tommaRutanX - originalX == tileSize) && tommaRutanY == originalY){
                      buttons.get(10).setBounds(tommaRutanX,originalY,tileSize,tileSize);
                      tommaRutan.setBounds(originalX,tommaRutanY,tileSize,tileSize);
                  }
-                 else if(originalY - tommaRutanY == tileSize || originalY + tommaRutanY == tileSize || tommaRutanY - originalY == tileSize && tommaRutanX == originalX){
+                 else if((originalY - tommaRutanY == tileSize || originalY + tommaRutanY == tileSize || tommaRutanY - originalY == tileSize) && tommaRutanX == originalX){
                      buttons.get(10).setBounds(originalX,tommaRutanY,tileSize,tileSize);
                      tommaRutan.setBounds(tommaRutanX,originalY,tileSize,tileSize);
                  }
