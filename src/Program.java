@@ -35,14 +35,18 @@ public class Program {
         tommaRutan.setBounds(tileSize*3,tileSize*3,tileSize,tileSize);
         panel.add(tommaRutan);
 
-        buttons.get(14).addActionListener(e -> {
-            int originalX = buttons.get(14).getX();
-            int originalY = buttons.get(14).getY();
+        buttons.get(11).addActionListener(e -> {
+            int originalX = buttons.get(11).getX();
+            int originalY = buttons.get(11).getY();
             int tommaRutanX = tommaRutan.getX();
             int tommaRutanY = tommaRutan.getY();
             if(originalX - tommaRutanX == tileSize || originalX + tommaRutanX == tileSize || tommaRutanX - originalX == tileSize){
-                buttons.get(14).setBounds(tommaRutanX,originalY,tileSize,tileSize);
+                buttons.get(11).setBounds(tommaRutanX,originalY,tileSize,tileSize);
                 tommaRutan.setBounds(originalX,tommaRutanY,tileSize,tileSize);
+            }
+            else if(originalY - tommaRutanY == tileSize || originalY + tommaRutanY == tileSize || tommaRutanY - originalY == tileSize){
+                buttons.get(11).setBounds(originalX,tommaRutanY,tileSize,tileSize);
+                tommaRutan.setBounds(tommaRutanX,originalY,tileSize,tileSize);
             }
         });
 
