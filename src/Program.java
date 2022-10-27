@@ -27,12 +27,14 @@ public class Program {
         tommaRutan.setVisible(false);
         panel.add(tommaRutan);
 
-        buttons.get(14).addActionListener(e -> {
-                panel.remove(14);
-                panel.add(buttons.get(14));
+        for (JButton button : buttons) {
+            button.addActionListener(e -> {
+                panel.remove(button);
+                panel.add(button);
                 frame.validate();
                 frame.repaint();
             });
+        }
 
 
         panel.setLayout(new GridLayout(4,4));
