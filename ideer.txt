@@ -1,3 +1,5 @@
 1. lägg till en till knapp men ha den notvisible
 
 2. se om det går att kanske enkelt validate repaint efter att ha flyttat den tomma knappen med den man tryckte på.
+
+3. Gör en egen Button class med position x*tileSize och y*tileSize, sen göra att knappen går att flyttas om den är max 1*tileSize x eller y från den tomma knappen.
