@@ -15,24 +15,11 @@ public class Program {
         for (int i = 0; i < 15; i++) {
             buttons.add(new JButton());
             buttons.get(i).setText(String.valueOf(i));
+            panel.add(buttons.get(i));
         }
 
         panel.setLayout(new GridLayout(4,4));
-        panel.add(buttons.get(0));
-        panel.add(buttons.get(1));
-        panel.add(buttons.get(2));
-        panel.add(buttons.get(3));
-        panel.add(buttons.get(4));
-        panel.add(buttons.get(5));
-        panel.add(buttons.get(6));
-        panel.add(buttons.get(7));
-        panel.add(buttons.get(8));
-        panel.add(buttons.get(9));
-        panel.add(buttons.get(10));
-        panel.add(buttons.get(11));
-        panel.add(buttons.get(12));
-        panel.add(buttons.get(13));
-        panel.add(buttons.get(14));
+
 
 
         frame.add(panel);
