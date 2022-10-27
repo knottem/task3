@@ -1,46 +1,39 @@
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class Program {
 
     JFrame frame = new JFrame("15-spel");
     JPanel panel = new JPanel();
-    JButton b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15;
+    ArrayList<JButton> buttons = new ArrayList<>();
     int tileSize = 100;
 
+    Font defaultFont = new Font("Arial Black", Font.PLAIN, 20);
+
     void program(){
-        b1 = new JButton("1");
-        b2 = new JButton("2");
-        b3 = new JButton("3");
-        b4 = new JButton("4");
-        b5 = new JButton("5");
-        b6 = new JButton("6");
-        b7 = new JButton("7");
-        b8 = new JButton("8");
-        b9 = new JButton("9");
-        b10= new JButton("10");
-        b11 = new JButton("11");
-        b12 = new JButton("12");
-        b13 = new JButton("13");
-        b14 = new JButton("14");
-        b15 = new JButton("15");
+        for (int i = 0; i < 15; i++) {
+            buttons.add(new JButton());
+            buttons.get(i).setText(String.valueOf(i));
+        }
 
         panel.setLayout(new GridLayout(4,4));
-        panel.add(b1);
-        panel.add(b2);
-        panel.add(b3);
-        panel.add(b4);
-        panel.add(b5);
-        panel.add(b6);
-        panel.add(b7);
-        panel.add(b8);
-        panel.add(b9);
-        panel.add(b10);
-        panel.add(b11);
-        panel.add(b12);
-        panel.add(b13);
-        panel.add(b14);
-        panel.add(b15);
+        panel.add(buttons.get(0));
+        panel.add(buttons.get(1));
+        panel.add(buttons.get(2));
+        panel.add(buttons.get(3));
+        panel.add(buttons.get(4));
+        panel.add(buttons.get(5));
+        panel.add(buttons.get(6));
+        panel.add(buttons.get(7));
+        panel.add(buttons.get(8));
+        panel.add(buttons.get(9));
+        panel.add(buttons.get(10));
+        panel.add(buttons.get(11));
+        panel.add(buttons.get(12));
+        panel.add(buttons.get(13));
+        panel.add(buttons.get(14));
+
 
         frame.add(panel);
 
