@@ -2,14 +2,16 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
-public class Program {
+public class Program extends Tools{
 
     JFrame frame = new JFrame("15-spel");
     JPanel panel = new JPanel();
+    JPanel topPanel = new JPanel();
     ArrayList<JButton> buttons = new ArrayList<>();
-    int tileSize = 100;
+    public int tileSize = 100;
 
     JButton tommaRutan = new JButton();
+    JButton newGame = new JButton("Nytt Spel");
 
     int width = 0;
     int height = 0;
@@ -31,46 +33,29 @@ public class Program {
                 width = 0;
             }
         }
+
         tommaRutan.setVisible(false);
         tommaRutan.setBounds(tileSize*3,tileSize*3,tileSize,tileSize);
         panel.add(tommaRutan);
 
-        buttons.get(11).addActionListener(e -> {
-            int originalX = buttons.get(11).getX();
-            int originalY = buttons.get(11).getY();
-            int tommaRutanX = tommaRutan.getX();
-            int tommaRutanY = tommaRutan.getY();
-            if((originalX - tommaRutanX == tileSize || originalX + tommaRutanX == tileSize || tommaRutanX - originalX == tileSize) && tommaRutanY == originalY){
-                buttons.get(11).setBounds(tommaRutanX,originalY,tileSize,tileSize);
-                tommaRutan.setBounds(originalX,tommaRutanY,tileSize,tileSize);
-            }
-            else if((originalY - tommaRutanY == tileSize || originalY + tommaRutanY == tileSize || tommaRutanY - originalY == tileSize) && tommaRutanX == originalX){
-                buttons.get(11).setBounds(originalX,tommaRutanY,tileSize,tileSize);
-                tommaRutan.setBounds(tommaRutanX,originalY,tileSize,tileSize);
-            }
-        });
-        buttons.get(10).addActionListener(e -> {
-                 int originalX = buttons.get(10).getX();
-                 int originalY = buttons.get(10).getY();
-                 int tommaRutanX = tommaRutan.getX();
-                 int tommaRutanY = tommaRutan.getY();
-                 if((originalX - tommaRutanX == tileSize || originalX + tommaRutanX == tileSize || tommaRutanX - originalX == tileSize) && tommaRutanY == originalY){
-                     buttons.get(10).setBounds(tommaRutanX,originalY,tileSize,tileSize);
-                     tommaRutan.setBounds(originalX,tommaRutanY,tileSize,tileSize);
-                 }
-                 else if((originalY - tommaRutanY == tileSize || originalY + tommaRutanY == tileSize || tommaRutanY - originalY == tileSize) && tommaRutanX == originalX){
-                     buttons.get(10).setBounds(originalX,tommaRutanY,tileSize,tileSize);
-                     tommaRutan.setBounds(tommaRutanX,originalY,tileSize,tileSize);
-                 }
-             });
+
+        for (int i = 0; i < buttons.size(); i++) {
+            int finalI = i;
+            buttons.get(i).addActionListener(e -> checkIfMove(buttons, finalI, tommaRutan, tileSize, frame));
+        }
+
+
+        topPanel.add(newGame);
 
         panel.setLayout(null);
+        frame.setLayout(new BorderLayout());
+        frame.add(topPanel, BorderLayout.NORTH);
 
         frame.add(panel);
 
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(tileSize*4 + 15, tileSize*4 + 35);
+        frame.setSize(tileSize*4 + 15, tileSize*4 + 65);
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
 
