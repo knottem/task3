@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
-public class Program {
+public class Program extends Tools {
 
     JFrame frame = new JFrame("15-spel");
     JPanel panel = new JPanel();
@@ -19,7 +19,7 @@ public class Program {
 
     void program(){
 
-        for (int i = 0; i < 15; i++) {
+        /*for (int i = 0; i < 15; i++) {
             buttons.add(new JButton());
             buttons.get(i).setBounds(width,height,tileSize,tileSize);
             buttons.get(i).setText(String.valueOf(i+1));
@@ -30,7 +30,8 @@ public class Program {
                 height = height + tileSize;
                 width = 0;
             }
-        }
+        }*/
+        createRandomStartTiles(buttons, panel);
         tommaRutan.setVisible(false);
         tommaRutan.setBounds(tileSize*3,tileSize*3,tileSize,tileSize);
         panel.add(tommaRutan);
