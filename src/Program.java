@@ -38,8 +38,12 @@ public class Program extends Tools{
         tommaRutan.setBounds(tileSize*3,tileSize*3,tileSize,tileSize);
         panel.add(tommaRutan);
 
-        buttons.get(11).addActionListener(e -> checkIfMove(buttons,11, tommaRutan, tileSize));
-        buttons.get(10).addActionListener(e -> checkIfMove(buttons,10, tommaRutan, tileSize));
+
+        for (int i = 0; i < buttons.size(); i++) {
+            int finalI = i;
+            buttons.get(i).addActionListener(e -> checkIfMove(buttons, finalI, tommaRutan, tileSize, frame));
+        }
+
 
         topPanel.add(newGame);
 
