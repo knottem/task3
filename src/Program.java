@@ -21,7 +21,7 @@ public class Program extends Tools{
 
     void program(){
 
-        for (int i = 0; i < 15; i++) {
+        /*for (int i = 0; i < 15; i++) {
             buttons.add(new JButton());
             buttons.get(i).setBounds(width,height,tileSize,tileSize);
             buttons.get(i).setText(String.valueOf(i+1));
@@ -32,8 +32,8 @@ public class Program extends Tools{
                 height = height + tileSize;
                 width = 0;
             }
-        }
-
+        }*/
+        createRandomStartTiles(buttons, panel);
         tommaRutan.setVisible(false);
         tommaRutan.setBounds(tileSize*3,tileSize*3,tileSize,tileSize);
         panel.add(tommaRutan);
