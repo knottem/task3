@@ -1,7 +1,17 @@
-1. lägg till en ytterligare knapp men ha den notVisible
+//1. lägg till en ytterligare knapp men ha den notVisible
 
-2. se om det går att kanske enkelt validate repaint efter att ha flyttat den tomma knappen med den man tryckte på.
+//2. se om det går att kanske enkelt validate repaint efter att ha flyttat den tomma knappen med den man tryckte på.
 
-3. Gör en egen Button class med position x*tileSize och y*tileSize, sen göra att knappen går att flyttas om den är max 1*tileSize x eller y från den tomma knappen.
+//3. Gör en egen Button class med position x*tileSize och y*tileSize, sen göra att knappen går att flyttas
+    om den är max 1*tileSize x eller y från den tomma knappen.
 
-4. med gridlayout kolla om man kan se position-1 först vänster, position+1 för höger, position+4 för neråt och position-4 för uppåt om tomma rutan är där. om den är där så bygg om gridlayouten men byt plats med knappen och tomma rutan.
+//4. med gridlayout kolla om man kan se position-1 först vänster, position+1 för höger, position+4 för neråt
+    och position-4 för uppåt om tomma rutan är där. om den är där så bygg om gridLayouten men byt plats med knappen och tomma rutan.
+
+5. Fixa nytt spel knappen.
+
+6. Fixa developer knapp som man bara behöver flytta en knapp med. flytta tomma rutan med knapp 15.
+
+//7. Fixa font på knapparna.
+
+8. Kanske algoritm som kollar om det går att lösa.

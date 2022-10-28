@@ -1,11 +1,19 @@
 import javax.swing.*;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Collections;
 
 public class Tools {
 
+
+
+    Font defaultFont = new Font("Arial Black", Font.PLAIN, 20);
+    int width;
+    int height;
+
     public ArrayList<Integer> randomNumbers() {
         ArrayList<Integer> randomizer = new ArrayList<>();
+        randomizer.add(0);
         randomizer.add(1);
         randomizer.add(2);
         randomizer.add(3);
@@ -20,32 +28,33 @@ public class Tools {
         randomizer.add(12);
         randomizer.add(13);
         randomizer.add(14);
-        randomizer.add(15);
+
 
         Collections.shuffle(randomizer);
-        for (int i : randomizer)
-            System.out.println(i);
         return randomizer;
     }
 
     public void createRandomStartTiles (ArrayList<JButton> buttons, JPanel panel) {
-        int height = 0;
-        int width = 0;
-        int tileSize = 100;
+
+        height = 0;
+        width = 0;
         ArrayList<Integer> numbers = randomNumbers();
-        for (int i = 0; i < 15; i++) {
+        int tileSize = 100;
+        for (int j = 0; j < 15; j++) {
             buttons.add(new JButton());
-            buttons.get(i).setBounds(width, height, tileSize, tileSize);
-            buttons.get(i).setText(String.valueOf(numbers.get(i)));
-            //buttons.get(i).setFont(defaultFont);
-            panel.add(buttons.get(i), i);
+        }
+        for (int i = 0; i < 15; i++) {
+            buttons.get(numbers.get(i)).setBounds(width, height, tileSize, tileSize);
+            buttons.get(numbers.get(i)).setText(String.valueOf(numbers.get(i)+1));
+            buttons.get(i).setFont(defaultFont);
+            panel.add(buttons.get(numbers.get(i)));
             width = width + tileSize;
             if (i == 3 || i == 7 || i == 11) {
                 height = height + tileSize;
                 width = 0;
             }
         }
-    }
+}
 
     public void checkIfMove(ArrayList<JButton> buttons,int i, JButton tommaRutan, int tileSize, JFrame frame){
 

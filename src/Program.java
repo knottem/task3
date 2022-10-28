@@ -6,6 +6,7 @@ public class Program extends Tools{
 
     JFrame frame = new JFrame("15-spel");
     JPanel panel = new JPanel();
+
     JPanel topPanel = new JPanel();
     ArrayList<JButton> buttons = new ArrayList<>();
     public int tileSize = 100;
@@ -13,15 +14,9 @@ public class Program extends Tools{
     JButton tommaRutan = new JButton();
     JButton newGame = new JButton("Nytt Spel");
 
-    int width = 0;
-    int height = 0;
-
-    Font defaultFont = new Font("Arial Black", Font.PLAIN, 20);
-
-
     void program(){
 
-        /*for (int i = 0; i < 15; i++) {
+       /* for (int i = 0; i < 15; i++) {
             buttons.add(new JButton());
             buttons.get(i).setBounds(width,height,tileSize,tileSize);
             buttons.get(i).setText(String.valueOf(i+1));
@@ -32,7 +27,10 @@ public class Program extends Tools{
                 height = height + tileSize;
                 width = 0;
             }
-        }*/
+        }
+
+        */
+
         createRandomStartTiles(buttons, panel);
         tommaRutan.setVisible(false);
         tommaRutan.setBounds(tileSize*3,tileSize*3,tileSize,tileSize);
@@ -46,6 +44,7 @@ public class Program extends Tools{
 
 
         topPanel.add(newGame);
+        newGame.addActionListener(e -> createRandomStartTiles(buttons,panel));
 
         panel.setLayout(null);
         frame.setLayout(new BorderLayout());
