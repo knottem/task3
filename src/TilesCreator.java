@@ -21,6 +21,9 @@ public class TilesCreator extends Tools{
             }
         }
         buttons.get(15).setVisible(false);
+        if (!(isSolvable(numbers))) {
+            JOptionPane.showMessageDialog(panel, "Detta pussel går inte att lösa");
+        }
     }
 
     public void createDevStartTiles (ArrayList<JButton> buttons, JPanel panel){
