@@ -71,20 +71,21 @@ public class Tools {
     }
 
     public boolean checkIFWinner(ArrayList<JButton> buttons){
+
         boolean win = false;
         int result = 0;
-        int x;
-        int y;
+        width = 0;
+        height = 0;
         int winX = 0;
         int winY = 0;
-        int tileSize = 100;
+
         for (int i = 0; i < buttons.size(); i++) {
-            x = buttons.get(i).getX();
-            y = buttons.get(i).getY();
-            if(x == winX){
+            width = buttons.get(i).getX();
+            height = buttons.get(i).getY();
+            if(width == winX){
                 result++;
             }
-            if(y == winY){
+            if(height == winY){
                 result++;
             }
             winX = winX + tileSize;
