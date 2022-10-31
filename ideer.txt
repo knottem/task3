@@ -17,3 +17,5 @@
 8. Kanske algoritm som kollar om det går att lösa.
 
 9. Lägg skapelsen av tomma rutan i varje function som skapar nytt spelfält.
+
+9a. ta bort tommaRutan och lägg till den i funktionerna som plats 16 i buttons arrayen.
