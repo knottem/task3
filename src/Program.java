@@ -35,8 +35,6 @@ public class Program extends Tools{
         }
 
         createRandomStartTiles(buttons, panel);
-        panel.add(tommaRutan);
-
 
         for (int i = 0; i < buttons.size(); i++) {
             int finalI = i;
