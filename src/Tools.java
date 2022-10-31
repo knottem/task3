@@ -38,6 +38,11 @@ public class Tools {
             }
         }
         buttons.get(15).setVisible(false);
+        isSolvable(numbers);
+        if (!(isSolvable(numbers))) {
+            JOptionPane.showMessageDialog(panel, "Detta pussel går inte att lösa");
+        }
+
 }
     public boolean isSolvable(ArrayList<Integer> randomizer)
     {
