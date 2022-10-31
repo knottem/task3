@@ -20,6 +20,7 @@ public class Tools {
         return randomizer;
     }
 
+    // Hittade koden for isSolvable på https://stackoverflow.com/questions/34570344/check-if-15-puzzle-is-solvable
     public boolean isSolvable(ArrayList<Integer> randomizer)
     {
         int parity = 0;
