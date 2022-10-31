@@ -61,11 +61,11 @@ public class Tools {
         int originalY = buttons.get(i).getY();
         int tommaRutanX = buttons.get(15).getX();
         int tommaRutanY = buttons.get(15).getY();
-        if((originalX - tommaRutanX == tileSize || originalX + tommaRutanX == tileSize || tommaRutanX - originalX == tileSize) && tommaRutanY == originalY){
+        if((originalX - tommaRutanX == tileSize || tommaRutanX - originalX == tileSize) && tommaRutanY == originalY){
             buttons.get(i).setBounds(tommaRutanX,originalY,tileSize,tileSize);
             buttons.get(15).setBounds(originalX,tommaRutanY,tileSize,tileSize);
         }
-        else if((originalY - tommaRutanY == tileSize || originalY + tommaRutanY == tileSize || tommaRutanY - originalY == tileSize) && tommaRutanX == originalX){
+        else if((originalY - tommaRutanY == tileSize || tommaRutanY - originalY == tileSize) && tommaRutanX == originalX){
             buttons.get(i).setBounds(originalX,tommaRutanY,tileSize,tileSize);
             buttons.get(15).setBounds(tommaRutanX,originalY,tileSize,tileSize);
         }
