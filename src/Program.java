@@ -10,8 +10,9 @@ public class Program extends Tools{
     JPanel topPanel = new JPanel();
     ArrayList<JButton> buttons = new ArrayList<>();
 
-    JButton tommaRutan = new JButton();
     JButton newGame = new JButton("Nytt Spel");
+
+    TilesCreator tilesCreator = new TilesCreator();
 
     void program(){
 
@@ -34,7 +35,7 @@ public class Program extends Tools{
             buttons.add(new JButton());
         }
 
-        createRandomStartTiles(buttons, panel);
+        tilesCreator.createRandomStartTiles(buttons, panel);
 
         for (int i = 0; i < buttons.size(); i++) {
             int finalI = i;
@@ -43,7 +44,7 @@ public class Program extends Tools{
 
 
         topPanel.add(newGame);
-        newGame.addActionListener(e -> createRandomStartTiles(buttons,panel));
+        newGame.addActionListener(e -> tilesCreator.createRandomStartTiles(buttons,panel));
 
         panel.setLayout(null);
         frame.setLayout(new BorderLayout());
