@@ -5,11 +5,10 @@ import java.util.Collections;
 
 public class Tools {
 
-
-
     Font defaultFont = new Font("Arial Black", Font.PLAIN, 20);
     int width;
     int height;
+    int tileSize = 100;
 
     public ArrayList<Integer> randomNumbers() {
         ArrayList<Integer> randomizer = new ArrayList<>();
@@ -28,7 +27,7 @@ public class Tools {
         randomizer.add(12);
         randomizer.add(13);
         randomizer.add(14);
-
+        randomizer.add(15);
 
         Collections.shuffle(randomizer);
         return randomizer;
@@ -39,13 +38,10 @@ public class Tools {
         height = 0;
         width = 0;
         ArrayList<Integer> numbers = randomNumbers();
-        int tileSize = 100;
-        for (int j = 0; j < 15; j++) {
-            buttons.add(new JButton());
-        }
-        for (int i = 0; i < 15; i++) {
+        for (int i = 0; i < 16; i++) {
             buttons.get(numbers.get(i)).setBounds(width, height, tileSize, tileSize);
             buttons.get(numbers.get(i)).setText(String.valueOf(numbers.get(i)+1));
+            buttons.get(i).setFocusPainted(false);
             buttons.get(i).setFont(defaultFont);
             panel.add(buttons.get(numbers.get(i)));
             width = width + tileSize;
@@ -54,21 +50,22 @@ public class Tools {
                 width = 0;
             }
         }
+        buttons.get(15).setVisible(false);
 }
 
-    public void checkIfMove(ArrayList<JButton> buttons,int i, JButton tommaRutan, int tileSize, JFrame frame){
+    public void checkIfMove(ArrayList<JButton> buttons,int i, JFrame frame){
 
         int originalX = buttons.get(i).getX();
         int originalY = buttons.get(i).getY();
-        int tommaRutanX = tommaRutan.getX();
-        int tommaRutanY = tommaRutan.getY();
+        int tommaRutanX = buttons.get(15).getX();
+        int tommaRutanY = buttons.get(15).getY();
         if((originalX - tommaRutanX == tileSize || originalX + tommaRutanX == tileSize || tommaRutanX - originalX == tileSize) && tommaRutanY == originalY){
             buttons.get(i).setBounds(tommaRutanX,originalY,tileSize,tileSize);
-            tommaRutan.setBounds(originalX,tommaRutanY,tileSize,tileSize);
+            buttons.get(15).setBounds(originalX,tommaRutanY,tileSize,tileSize);
         }
         else if((originalY - tommaRutanY == tileSize || originalY + tommaRutanY == tileSize || tommaRutanY - originalY == tileSize) && tommaRutanX == originalX){
             buttons.get(i).setBounds(originalX,tommaRutanY,tileSize,tileSize);
-            tommaRutan.setBounds(tommaRutanX,originalY,tileSize,tileSize);
+            buttons.get(15).setBounds(tommaRutanX,originalY,tileSize,tileSize);
         }
         showWinnerMessage(frame, checkIFWinner(buttons));
     }
