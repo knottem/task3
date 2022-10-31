@@ -13,22 +13,11 @@ public class Tools {
 
     public ArrayList<Integer> randomNumbers() {
         ArrayList<Integer> randomizer = new ArrayList<>();
-        randomizer.add(0);
-        randomizer.add(1);
-        randomizer.add(2);
-        randomizer.add(3);
-        randomizer.add(4);
-        randomizer.add(5);
-        randomizer.add(6);
-        randomizer.add(7);
-        randomizer.add(8);
-        randomizer.add(9);
-        randomizer.add(10);
-        randomizer.add(11);
-        randomizer.add(12);
-        randomizer.add(13);
-        randomizer.add(14);
-
+        int k = 0;
+        for (int i = 0; i < 15; i++) {
+            randomizer.add(k);
+            k++;
+        }
 
         Collections.shuffle(randomizer);
         return randomizer;
