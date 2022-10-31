@@ -16,26 +16,12 @@ public class Program extends Tools{
 
     void program(){
 
-       /* for (int i = 0; i < 15; i++) {
-            buttons.add(new JButton());
-            buttons.get(i).setBounds(width,height,tileSize,tileSize);
-            buttons.get(i).setText(String.valueOf(i+1));
-            buttons.get(i).setFont(defaultFont);
-            panel.add(buttons.get(i),i);
-            width = width + tileSize;
-            if(i == 3 || i == 7 || i == 11){
-                height = height + tileSize;
-                width = 0;
-            }
-        }
-
-        */
-
         for (int j = 0; j < 16; j++) {
             buttons.add(new JButton());
         }
 
-        tilesCreator.createRandomStartTiles(buttons, panel);
+        //tilesCreator.createRandomStartTiles(buttons, panel);
+        tilesCreator.createDevStartTiles(buttons,panel);
 
         for (int i = 0; i < buttons.size(); i++) {
             int finalI = i;
