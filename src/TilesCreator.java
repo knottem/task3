@@ -37,8 +37,10 @@ public class TilesCreator extends Tools{
                  width = 0;
              }
          }
-            buttons.get(14).setBounds(tileSize*4,tileSize*4,tileSize,tileSize);
-            buttons.get(15).setBounds(tileSize*3,tileSize*4,tileSize,tileSize);
+
+        buttons.get(14).setBounds(tileSize*3,tileSize*3,tileSize,tileSize);
+        buttons.get(15).setBounds(tileSize*2,tileSize*3,tileSize,tileSize);
+        buttons.get(15).setVisible(false);
 
     }
 
