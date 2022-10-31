@@ -8,14 +8,16 @@
 //4. med gridlayout kolla om man kan se position-1 först vänster, position+1 för höger, position+4 för neråt
     och position-4 för uppåt om tomma rutan är där. Om den är där så bygg om gridLayouten men byt plats med knappen och tomma rutan.
 
-5. Fixa nytt spel knappen.
+//5. Fixa nytt spel knappen.
 
-6. Fixa developer knapp som man bara behöver flytta en knapp med. Flytta tomma rutan med knapp 15.
+//6. Fixa developer knapp som man bara behöver flytta en knapp med. Flytta tomma rutan med knapp 15.
 
 //7. Fixa font på knapparna.
 
-8. Kanske algoritm som kollar om det går att lösa.
+//8. Kanske algoritm som kollar om det går att lösa.
 
-9. Lägg skapelsen av tomma rutan i varje function som skapar nytt spelfält.
+8a. skriv kommentar var vi fick den ifrån.
 
-9a. ta bort tommaRutan och lägg till den i funktionerna som plats 16 i buttons arrayen.
+//9. Lägg skapelsen av tomma rutan i varje function som skapar nytt spelfält.
+
+//9a. ta bort tommaRutan och lägg till den i funktionerna som plats 16 i buttons arrayen.

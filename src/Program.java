@@ -26,8 +26,6 @@ public class Program extends Tools{
             buttons.get(i).addActionListener(e -> checkIfMove(buttons, finalI, frame));
         }
 
-        tilesCreator.createRandomStartTiles(buttons,panel);
-
         topPanel.add(newGame);
         newGame.addActionListener(e -> tilesCreator.createRandomStartTiles(buttons,panel));
         topPanel.add(devHelp);
@@ -45,7 +43,7 @@ public class Program extends Tools{
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
 
-
+        tilesCreator.createRandomStartTiles(buttons,panel);
 
     }
 }
