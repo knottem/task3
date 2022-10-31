@@ -10,40 +10,28 @@ public class Program extends Tools{
     JPanel topPanel = new JPanel();
     ArrayList<JButton> buttons = new ArrayList<>();
 
-    JButton tommaRutan = new JButton();
     JButton newGame = new JButton("Nytt Spel");
+    JButton devHelp = new JButton("Dev Help");
+
+    TilesCreator tilesCreator = new TilesCreator();
 
     void program(){
-
-       /* for (int i = 0; i < 15; i++) {
-            buttons.add(new JButton());
-            buttons.get(i).setBounds(width,height,tileSize,tileSize);
-            buttons.get(i).setText(String.valueOf(i+1));
-            buttons.get(i).setFont(defaultFont);
-            panel.add(buttons.get(i),i);
-            width = width + tileSize;
-            if(i == 3 || i == 7 || i == 11){
-                height = height + tileSize;
-                width = 0;
-            }
-        }
-
-        */
 
         for (int j = 0; j < 16; j++) {
             buttons.add(new JButton());
         }
-
-        createRandomStartTiles(buttons, panel);
 
         for (int i = 0; i < buttons.size(); i++) {
             int finalI = i;
             buttons.get(i).addActionListener(e -> checkIfMove(buttons, finalI, frame));
         }
 
+        tilesCreator.createRandomStartTiles(buttons,panel);
 
         topPanel.add(newGame);
-        newGame.addActionListener(e -> createRandomStartTiles(buttons,panel));
+        newGame.addActionListener(e -> tilesCreator.createRandomStartTiles(buttons,panel));
+        topPanel.add(devHelp);
+        devHelp.addActionListener(e -> tilesCreator.createDevStartTiles(buttons,panel));
 
         panel.setLayout(null);
         frame.setLayout(new BorderLayout());
