@@ -20,8 +20,6 @@ public class Tools {
         return randomizer;
     }
 
-
-
     public void checkIfMove(ArrayList<JButton> buttons,int i, JFrame frame){
 
         int originalX = buttons.get(i).getX();

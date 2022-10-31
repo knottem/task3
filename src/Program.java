@@ -11,6 +11,7 @@ public class Program extends Tools{
     ArrayList<JButton> buttons = new ArrayList<>();
 
     JButton newGame = new JButton("Nytt Spel");
+    JButton devHelp = new JButton("Dev Help");
 
     TilesCreator tilesCreator = new TilesCreator();
 
@@ -20,17 +21,17 @@ public class Program extends Tools{
             buttons.add(new JButton());
         }
 
-        //tilesCreator.createRandomStartTiles(buttons, panel);
-        tilesCreator.createDevStartTiles(buttons,panel);
-
         for (int i = 0; i < buttons.size(); i++) {
             int finalI = i;
             buttons.get(i).addActionListener(e -> checkIfMove(buttons, finalI, frame));
         }
 
+        tilesCreator.createRandomStartTiles(buttons,panel);
 
         topPanel.add(newGame);
         newGame.addActionListener(e -> tilesCreator.createRandomStartTiles(buttons,panel));
+        topPanel.add(devHelp);
+        devHelp.addActionListener(e -> tilesCreator.createDevStartTiles(buttons,panel));
 
         panel.setLayout(null);
         frame.setLayout(new BorderLayout());
