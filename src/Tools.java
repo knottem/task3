@@ -81,7 +81,7 @@ public class Tools {
         int winX = 0;
         int winY = 0;
 
-        for (int i = 0; i < buttons.size(); i++) {
+        for (int i = 0; i < buttons.size()-1; i++) {
             width = buttons.get(i).getX();
             height = buttons.get(i).getY();
             if(width == winX){
