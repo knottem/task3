@@ -16,7 +16,7 @@
 
 //8. Kanske algoritm som kollar om det går att lösa.
 
-8a. skriv kommentar var vi fick den ifrån.
+//8a. Skriv kommentar var vi fick den ifrån.
 
 //9. Lägg skapelsen av tomma rutan i varje function som skapar nytt spelfält.
 

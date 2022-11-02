@@ -41,8 +41,6 @@ public class Tools {
 
         boolean win = false;
         int result = 0;
-        width = 0;
-        height = 0;
         int winX = 0;
         int winY = 0;
 
