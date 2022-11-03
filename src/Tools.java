@@ -20,6 +20,7 @@ public class Tools {
         return randomizer;
     }
     // Hittade koden for isSolvable på https://stackoverflow.com/questions/34570344/check-if-15-puzzle-is-solvable
+    /* fick inte koden att fungera perfekt
     public boolean isSolvable(ArrayList<Integer> randomizer)
     {
         int parity = 0;
@@ -55,6 +56,7 @@ public class Tools {
             return parity % 2 == 0;
         }
     }
+    */
 
     public void checkIfMove(ArrayList<JButton> buttons,int i, JFrame frame){
 

@@ -18,6 +18,12 @@ public class TilesCreator extends Tools{
                 width = 0;
             }
         }
+        /* fick inte koden isSolvable att fungera perfekt
+        if (!(isSolvable(numbers))) {
+            JOptionPane.showMessageDialog(panel, "Detta pussel går inte att lösa");
+        }
+
+         */
 
     }
 
@@ -25,7 +31,6 @@ public class TilesCreator extends Tools{
 
         height = 0;
         width = 0;
-
         for (int i = 0; i < 16; i++) {
              buttons.get(i).setBounds(width,height,tileSize,tileSize);
              buttons.get(i).setText(String.valueOf(i+1));
