@@ -19,8 +19,8 @@ public class Tools {
         Collections.shuffle(randomizer);
         return randomizer;
     }
-
     // Hittade koden for isSolvable på https://stackoverflow.com/questions/34570344/check-if-15-puzzle-is-solvable
+    /* fick inte koden att fungera perfekt
     public boolean isSolvable(ArrayList<Integer> randomizer)
     {
         int parity = 0;
@@ -33,7 +33,7 @@ public class Tools {
             if (i % gridWidth == 0) { // advance to next row
                 row++;
             }
-            if (randomizer.get(i) == 0) { // the blank tile
+            if (randomizer.get(i) == 15) { // the blank tile
                 blankRow = row; // save the row on which encountered
                 continue;
             }
@@ -56,6 +56,8 @@ public class Tools {
             return parity % 2 == 0;
         }
     }
+    */
+
     public void checkIfMove(ArrayList<JButton> buttons,int i, JFrame frame){
 
         int originalX = buttons.get(i).getX();
@@ -77,8 +79,6 @@ public class Tools {
 
         boolean win = false;
         int result = 0;
-        width = 0;
-        height = 0;
         int winX = 0;
         int winY = 0;
 

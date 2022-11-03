@@ -11,8 +11,6 @@ public class TilesCreator extends Tools{
         for (int i = 0; i < 16; i++) {
             buttons.get(numbers.get(i)).setBounds(width, height, tileSize, tileSize);
             buttons.get(numbers.get(i)).setText(String.valueOf(numbers.get(i)+1));
-            buttons.get(i).setFocusPainted(false);
-            buttons.get(i).setFont(defaultFont);
             panel.add(buttons.get(numbers.get(i)));
             width = width + tileSize;
             if (i == 3 || i == 7 || i == 11) {
@@ -20,22 +18,22 @@ public class TilesCreator extends Tools{
                 width = 0;
             }
         }
-        buttons.get(15).setVisible(false);
+        /* fick inte koden isSolvable att fungera perfekt
         if (!(isSolvable(numbers))) {
             JOptionPane.showMessageDialog(panel, "Detta pussel går inte att lösa");
         }
+
+         */
+
     }
 
     public void createDevStartTiles (ArrayList<JButton> buttons, JPanel panel){
 
         height = 0;
         width = 0;
-
         for (int i = 0; i < 16; i++) {
              buttons.get(i).setBounds(width,height,tileSize,tileSize);
              buttons.get(i).setText(String.valueOf(i+1));
-             buttons.get(i).setFocusPainted(false);
-             buttons.get(i).setFont(defaultFont);
              panel.add(buttons.get(i),i);
              width = width + tileSize;
              if(i == 3 || i == 7 || i == 11){

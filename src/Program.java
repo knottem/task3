@@ -17,14 +17,14 @@ public class Program extends Tools{
 
     void program(){
 
-        for (int j = 0; j < 16; j++) {
-            buttons.add(new JButton());
-        }
-
-        for (int i = 0; i < buttons.size(); i++) {
+        for (int i = 0; i < 16; i++) {
             int finalI = i;
+            buttons.add(new JButton());
             buttons.get(i).addActionListener(e -> checkIfMove(buttons, finalI, frame));
+            buttons.get(i).setFocusPainted(false);
+            buttons.get(i).setFont(defaultFont);
         }
+        buttons.get(15).setVisible(false);
 
         topPanel.add(newGame);
         newGame.addActionListener(e -> tilesCreator.createRandomStartTiles(buttons,panel));
@@ -39,7 +39,7 @@ public class Program extends Tools{
 
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(tileSize*4 + 15, tileSize*4 + 65);
+        frame.setSize(tileSize*4 + 15, tileSize*4 + 75);
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
 
